@@ -3,8 +3,16 @@ package com.artisan.artisan.Entity;
 import jakarta.persistence.*;
 
 import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Metier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,7 +20,7 @@ public class Metier {
 
     private String nom;
 
-    @ManyToMany(mappedBy = "metiers")
+    @OneToMany(mappedBy = "metier")
     private List<Artisan> artisans;
 
     public String getNom() {

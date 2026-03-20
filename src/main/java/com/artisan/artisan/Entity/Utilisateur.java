@@ -1,54 +1,34 @@
 package com.artisan.artisan.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Entity
 
 @Inheritance(strategy = InheritanceType.JOINED)
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Utilisateur {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nom;
-    private String Prenom;
+    private String prenom;
+    private String email;
 
+    @JsonIgnore
     private String motpasse;
 
-    private String Localisation;
+    private String localisation;
 
     private String photoprofil;
 
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getPrenom() {
-        return Prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        Prenom = prenom;
-    }
-
-    public String getMotpasse() {
-        return motpasse;
-    }
-
-    public void setMotpasse(String motpasse) {
-        this.motpasse = motpasse;
-    }
-
-    public String getPhotoprofil() {
-        return photoprofil;
-    }
-
-    public void setPhotoprofil(String photoprofil) {
-        this.photoprofil = photoprofil;
-    }
 }
