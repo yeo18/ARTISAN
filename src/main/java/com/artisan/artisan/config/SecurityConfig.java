@@ -1,4 +1,4 @@
-package com.artisan.artisan.Config;
+package com.artisan.artisan.config;
 
 import com.artisan.artisan.Security.JwtAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
