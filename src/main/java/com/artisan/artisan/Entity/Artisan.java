@@ -14,6 +14,10 @@ import lombok.AllArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Artisan extends Utilisateur {
+
+    @Column(nullable = false)
+    private String commune;
+
     @ManyToOne
     @JoinColumn(name = "metier_id")
     private Metier metier;

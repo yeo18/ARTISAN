@@ -29,5 +29,8 @@ public class ArtisanCreateDto {
 
     private String localisation;
 
+    @NotBlank(message = "La commune est obligatoire")
+    private String commune;
+
     private Integer metierId;
 }

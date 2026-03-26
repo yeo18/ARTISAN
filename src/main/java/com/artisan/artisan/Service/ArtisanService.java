@@ -33,6 +33,7 @@ public class ArtisanService {
         artisan.setEmail(artisanCreateDto.getEmail());
         artisan.setMotpasse(passwordEncoder.encode(artisanCreateDto.getMotpasse()));
         artisan.setLocalisation(artisanCreateDto.getLocalisation());
+        artisan.setCommune(artisanCreateDto.getCommune());
 
         if (artisanCreateDto.getMetierId() != null) {
             artisan.setMetier(metierRepository.findById(artisanCreateDto.getMetierId()).orElse(null));

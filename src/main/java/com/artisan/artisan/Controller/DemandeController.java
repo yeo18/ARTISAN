@@ -15,12 +15,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
+
 @RequestMapping("/demandes")
+
 public class DemandeController {
 
     @Autowired
     private DemandeService demandeService;
 
+
+    @PostMapping
+    public ResponseEntity<Demande> createDemande(@RequestBody Demande demande) {
+        return ResponseEntity.ok(demandeService.saveDemande(demande));
+    }
 
     @GetMapping("/{id}")
     public Demande getDemande(@PathVariable Long id) {
